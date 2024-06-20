@@ -26,6 +26,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Ekran boyutunu kontrol et
+        if !isSupportedDevice() {
+            let alertController = UIAlertController(title: "Desteklenmeyen Cihaz", message: "Bu uygulama sadece 10 inç ve üzeri cihazlarda çalışır.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Tamam", style: .default, handler: { _ in
+                exit(0)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,6 +53,30 @@ class ViewController: UIViewController {
             return result + (price * Double(item.value.count))
         }
         totalPriceLabel.text = "Toplam Fiyat: \(totalPrice) TL"
+    }
+
+    func isSupportedDevice() -> Bool {
+        let screenSize = UIScreen.main.bounds.size
+        let screenScale = UIScreen.main.scale
+        let screenWidth = screenSize.width * screenScale
+        let screenHeight = screenSize.height * screenScale
+        
+        // PPI değerlerini belirleyin (Apple cihazları için)
+        let ppi: CGFloat
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            ppi = 264 // Genel iPad PPI değeri
+        case .phone:
+            ppi = 326 // Genel iPhone PPI değeri
+        default:
+            ppi = 163 // Varsayılan PPI değeri
+        }
+        
+        let widthInInches = screenWidth / ppi
+        let heightInInches = screenHeight / ppi
+        let diagonalInInches = sqrt(pow(widthInInches, 2) + pow(heightInInches, 2))
+        
+        return diagonalInInches >= 7.0
     }
 }
 
@@ -122,7 +157,7 @@ extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
         dragItem.localObject = selectedItemName
         return [dragItem]
     }
-    
+
     func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
         let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(row: selectedItems.count - 1, section: 0)
         
@@ -141,4 +176,5 @@ extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
         }
         updateTotalPrice()
     }
-}
+    }
+
