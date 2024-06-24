@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4325C69D2C2AD9FE0001CDFC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325C69C2C2AD9FE0001CDFC /* DataManager.swift */; };
 		4F2E40222C246BB100ECC17B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E40212C246BB100ECC17B /* AppDelegate.swift */; };
 		4F2E40242C246BB100ECC17B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E40232C246BB100ECC17B /* SceneDelegate.swift */; };
 		4F2E40262C246BB100ECC17B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E40252C246BB100ECC17B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4325C69C2C2AD9FE0001CDFC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4F2E401E2C246BB100ECC17B /* SwiftFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2E40212C246BB100ECC17B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F2E40232C246BB100ECC17B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				4F2E40212C246BB100ECC17B /* AppDelegate.swift */,
 				4F2E40392C24BE2400ECC17B /* SelectedItemCell.swift */,
+				4325C69C2C2AD9FE0001CDFC /* DataManager.swift */,
 				4F2E40352C246FB400ECC17B /* CollectionViewCell.swift */,
 				4F2E40232C246BB100ECC17B /* SceneDelegate.swift */,
 				4F2E40252C246BB100ECC17B /* ViewController.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2E40262C246BB100ECC17B /* ViewController.swift in Sources */,
+				4325C69D2C2AD9FE0001CDFC /* DataManager.swift in Sources */,
 				4F2E40222C246BB100ECC17B /* AppDelegate.swift in Sources */,
 				4F2E403A2C24BE2400ECC17B /* SelectedItemCell.swift in Sources */,
 				4F2E40362C246FB400ECC17B /* CollectionViewCell.swift in Sources */,
