@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if !isSupportedDevice() {
-            let alertController = UIAlertController(title: "Desteklenmeyen Cihaz", message: "Bu uygulama sadece 10 inç ve üzeri cihazlarda çalışır.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Desteklenmeyen Cihaz", message: "Bu uygulama sadece 7 inç ve üzeri ekran boyutuna sahip iPad'lerde çalışır.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Tamam", style: .default, handler: { _ in
                 exit(0)
             })
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         let heightInInches = screenHeight / ppi
         let diagonalInInches = sqrt(pow(widthInInches, 2) + pow(heightInInches, 2))
         
-        return diagonalInInches >= 7.0
+        return UIDevice.current.userInterfaceIdiom == .pad && diagonalInInches >= 7.0
     }
 }
 

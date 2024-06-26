@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Cihazın bir iPad olup olmadığını kontrol et
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            // Cihaz bir iPad değilse uygulamayı sonlandır
+            exit(0)
+        }
+        
         // Override point for customization after application launch.
         return true
     }
